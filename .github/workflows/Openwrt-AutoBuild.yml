@@ -194,8 +194,8 @@ jobs:
       run: |
         mkdir firmware && mv -f `find openwrt/bin/targets/*/*/ -maxdepth 1 \
         -name "*combined*" \
-        -or -name "*sysupgrade*"` \
-        -or -name "*root*" ./firmware/
+        -or -name "*sysupgrade*" \
+        -or -name "*root*"` ./firmware/
         cp openwrt/.config  ./firmware/${{matrix.target}}.config
         cd firmware
         echo ${{ env.date4 }} > version.txt
